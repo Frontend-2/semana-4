@@ -30,9 +30,9 @@ function capturarDatosFormulario() {
         }
     });
     // recorremos los radio
-    nacionalidad.forEach( nacion => {
+    nacionalidad.forEach(nacion => {
         // la nacionalidad seleccionada es la que se guarda en el objeto
-        if(nacion.checked){
+        if (nacion.checked) {
             obejetoInformacion.nacionalidad = nacion.id;
         }
     })
@@ -56,6 +56,14 @@ form.addEventListener('submit', function (evento) {
 
     const errores = validarInformacion(datos);
     console.log(errores);
+
+    // mostramos los errores presentes
+    renderizarErrores(errores);
+
+    // mostramos mensaje de exito si no hay errores
+    mostrarMensajeExito(errores);
+
+
 });
 
 
